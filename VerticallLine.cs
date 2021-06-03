@@ -1,5 +1,4 @@
-﻿using ConsoleApp7;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,31 +6,27 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-    class HorizontalLine : Figure
+    
+    class VerticallLine : Figure
     {
+        private new List<Point> pList;
 
-        public HorizontalLine(int xLeft, int xRight, int y, char sym)
+        public VerticallLine(int yUp, int yDown, int x, char sym)
         {
             pList = new List<Point>();
-            for (int x = xLeft; x <= xRight; x++)
+            for (int y = yUp; y <= yDown; y++)
             {
                 Point p = new Point(x, y, sym);
-
                 pList.Add(p);
             }
+
         }
+
+
+
+
     }
+
 }
 
 
-
-                 
-                
-            
-
-
-
-
-
-
-   

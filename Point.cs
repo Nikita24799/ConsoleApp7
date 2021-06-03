@@ -11,8 +11,10 @@ namespace ConsoleApp7
         public int x;
         public int y;
         public int sym;
-        
-        public Point()
+        private Point tail;
+        private ConsoleColor cyan;
+
+        public Point(Point head)
         {
         }   
 
@@ -23,10 +25,31 @@ namespace ConsoleApp7
             sym = _sym;
         }
 
+        public Point(Point tail, ConsoleColor cyan)
+        {
+            this.tail = tail;
+            this.cyan = cyan;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        internal void Move(int i, Direction direction)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool IsHit(Point point)
+        {
+            throw new NotImplementedException();
         }
     }
 }
