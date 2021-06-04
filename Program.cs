@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp7
 {
-	class Program
+	class Program : Figure
 	{
 
 		static void Main(string[] args)

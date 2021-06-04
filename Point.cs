@@ -10,25 +10,55 @@ namespace ConsoleApp7
     {
         public int x;
         public int y;
-        public int sym;
-        private Point tail;
+        public char sym;
         private ConsoleColor cyan;
 
-        public Point(Point head)
+        public Point()
         {
-        }   
-
-        public Point(int _x, int _y, char _sym)
-        {
-            x = _x;
-            y = _y;
-            sym = _sym;
         }
 
-        public Point(Point tail, ConsoleColor cyan)
+        public Point(int x, int y, char sym)
         {
-            this.tail = tail;
+            this.x = x;
+            this.y = y;
+            this.sym = sym;
+        }
+
+        public Point(Point p)
+        {
+            x = p.x;
+            y = p.y;
+            sym = p.sym;
+        }
+
+        public Point(Point p, ConsoleColor cyan) : this(p)
+        {
             this.cyan = cyan;
+        }
+
+        public void Move(int offset, Direction direction)
+        {
+            if (direction == Direction.RIGHT)
+            {
+                x = x + offset;
+            }
+            else if (direction == Direction.LEFT)
+            {
+                x = x - offset;
+            }
+            else if (direction == Direction.UP)
+            {
+                y = y - offset;
+            }
+            else if (direction == Direction.DOWN)
+            {
+                y = y + offset;
+            }
+        }
+
+        public bool IsHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
         }
 
         public void Draw()
@@ -37,19 +67,15 @@ namespace ConsoleApp7
             Console.Write(sym);
         }
 
-        internal void Move(int i, Direction direction)
+        public void Clear()
         {
-            throw new NotImplementedException();
+            sym = ' ';
+            Draw();
         }
 
-        internal void Clear()
+        public override string ToString()
         {
-            throw new NotImplementedException();
-        }
-
-        internal bool IsHit(Point point)
-        {
-            throw new NotImplementedException();
+            return x + ", " + y + ", " + sym;
         }
     }
 }

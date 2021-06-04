@@ -26,11 +26,6 @@ namespace ConsoleApp7
             wallList.Add(rightLine);
         }
 
-        internal bool IsHit(Snake snake)
-        {
-            throw new NotImplementedException();
-        }
-
         internal bool IsHit(Figure figure)
         {
             foreach (var wall in wallList)

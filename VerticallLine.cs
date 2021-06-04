@@ -9,7 +9,6 @@ namespace ConsoleApp7
     
     class VerticallLine : Figure
     {
-        private new List<Point> pList;
 
         public VerticallLine(int yUp, int yDown, int x, char sym)
         {
